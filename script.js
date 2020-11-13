@@ -13,7 +13,7 @@ var songs = [
 ];
 
 //every 5s, random select an object
-var interval = setInterval(selectSong, 5000);
+var interval = setInterval(selectSong, 3000);
 
 function selectSong(){
     var track = Math.floor(Math.random()*5);
