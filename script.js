@@ -12,13 +12,31 @@ var songs = [
 {name: 'recording-5', title: 'dei bong'},
 ];
 
-//every 5s, random select an object
-var interval = setInterval(selectSong, 3000);
+var stop = false;
+var interval;
+
+function startPlaying(){
+    stop = false;
+    //every 5s, randomly select an object to play
+     interval = setInterval(selectSong, 4000);
+    
+}
 
 function selectSong(){
-    var track = Math.floor(Math.random()*5);
-    console.log(songs[track].title);
-    songTitle.textContent = `${songs[track].title}`
-    player.src = `music/${songs[track].name}.mp3`;
-    player.play();
+    //if stop = true, call stopPlaying()
+    if(stop === true){
+        stopPlaying();
+    }else {
+        var track = Math.floor(Math.random()*5);
+        console.log(songs[track].title);
+        songTitle.textContent = `${songs[track].title}`
+        player.src = `music/${songs[track].name}.mp3`;
+        player.play();
+    }
+}
+
+function stopPlaying(){
+    stop = true;
+    clearInterval(interval);
+    console.log('stop playing called');
 }

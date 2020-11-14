@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+}
+.player-container {
+  text-align: center;
+}
+
+.start-button {
+  margin: 10px 0px;
+}
+
+.stop-button {
+  margin: 10px 0px;
+}
