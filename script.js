@@ -10,6 +10,9 @@ var songs = [
 {name: 'recording-3', title: 'huan sau'},
 {name: 'recording-4', title: 'bong sau'},
 {name: 'recording-5', title: 'dei bong'},
+{name: 'recording-6', title: 'geng da'},
+{name: 'recording-7', title: 'lap da'},
+{name: 'recording-8', title: 'pak da'},
 ];
 
 var stop = false;
@@ -18,7 +21,7 @@ var interval;
 function startPlaying(){
     stop = false;
     //every 5s, randomly select an object to play
-     interval = setInterval(selectSong, 4000);
+     interval = setInterval(selectSong, 7000);
     
 }
 
@@ -27,7 +30,7 @@ function selectSong(){
     if(stop === true){
         stopPlaying();
     }else {
-        var track = Math.floor(Math.random()*5);
+        var track = Math.floor(Math.random()*8);
         console.log(songs[track].title);
         songTitle.textContent = `${songs[track].title}`
         player.src = `music/${songs[track].name}.mp3`;
